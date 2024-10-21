@@ -82,22 +82,28 @@ const Navbar = () => {
                     >
                       {item.label}
                     </span>
-                    <div className="absolute left-0 w-64 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-700 ease-in-out">
-                      {item.submenu &&
-                        item.submenu.map((submenuItem) => (
-                          <NextLink
-                            key={submenuItem.href}
-                            className={clsx(
-                              "block px-4 py-2 hover:bg-gray-100 rounded-md hover:text-orange-500",
-                              pathName === submenuItem.href &&
-                                "text-orange-500",
-                              isScrolled ? "text-gray-800" : "text-gray-800", // Change text color based on scroll
-                            )}
-                            href={submenuItem.href}
-                          >
-                            {submenuItem.label}
-                          </NextLink>
-                        ))}
+                    <div className="relative group">
+                      <div className={"arrow-up"}>
+                        <div className="absolute left-0 w-64 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-700 ease-in-out mt-[12px] py-3">
+                          {item.submenu &&
+                            item.submenu.map((submenuItem) => (
+                              <NextLink
+                                key={submenuItem.href}
+                                className={clsx(
+                                  "block px-4 py-2 hover:bg-gray-100 rounded-md hover:text-orange-500",
+                                  pathName === submenuItem.href &&
+                                    "text-orange-500",
+                                  isScrolled
+                                    ? "text-gray-800"
+                                    : "text-gray-800",
+                                )}
+                                href={submenuItem.href}
+                              >
+                                {submenuItem.label}
+                              </NextLink>
+                            ))}
+                        </div>
+                      </div>
                     </div>
                   </>
                 ) : (
