@@ -48,7 +48,7 @@ const Navbar = () => {
 
         pathName !== "/" || isScrolled
           ? "fixed top-0 z-50 translate-y-0 bg-white transition duration-700 ease-in-out"
-          : "bg-transparent text-white shadow-none bg-opacity-0",
+          : "bg-transparent text-white shadow-none rounded-none border-none",
       )}
       maxWidth="2xl"
       position="static"
@@ -88,7 +88,7 @@ const Navbar = () => {
                           <NextLink
                             key={submenuItem.href}
                             className={clsx(
-                              "block px-4 py-2 hover:bg-gray-100",
+                              "block px-4 py-2 hover:bg-gray-100 rounded-md hover:text-orange-500",
                               pathName === submenuItem.href &&
                                 "text-orange-500",
                               isScrolled ? "text-gray-800" : "text-gray-800", // Change text color based on scroll
@@ -132,6 +132,7 @@ const Navbar = () => {
                   <span
                     className="text-lg ml-4 cursor-pointer transition duration-500 ease-in-out text-gray-800"
                     role="button"
+                    tabIndex={0} // Make it focusable
                     onClick={handleServiceClick}
                     onKeyDown={(e) => {
                       if (e.key === "Enter" || e.key === " ") {

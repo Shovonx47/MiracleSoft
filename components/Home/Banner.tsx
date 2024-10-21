@@ -134,7 +134,6 @@ const Banner = () => {
         {/* Text (Now linked to the next image) */}
         <div className="absolute inset-0 h-full flex items-center justify-center text-white z-10">
           <div>
-            
             <motion.p
               key={index}
               animate={{ opacity: 1, y: 0 }} // Move into the center

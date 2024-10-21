@@ -1,0 +1,27 @@
+/* Image zoom effect */
+.image-zoom {
+    transition: transform 0.7s ease-in-out;
+  }
+  .image-zoom:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Icon animation */
+  .icon-animation {
+    transition: transform 0.7s ease-in-out;
+  }
+  .group:hover .icon-animation {
+    transform: rotate(45deg) scale(1.1);
+  }
+  
+  /* Fade-in effect for text */
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
