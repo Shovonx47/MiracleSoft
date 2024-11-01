@@ -1,8 +1,7 @@
 import React from "react";
-import { cards } from "./data";
+ 
 import CardComponent from "./Card";
- 
- 
+import { cards } from "./data";
 
  
 
