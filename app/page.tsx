@@ -1,11 +1,15 @@
 import Banner from "@/components/Home/Banner";
-import Services from "@/components/Home/services/page";
+import Contact from "@/components/Home/Contact/Contact";
+import Pricing from "@/components/Home/Pricing/Pricing";
+import Services from "@/components/Home/Services/page";
 
 export default function Home() {
   return (
     <>
       <Banner />
       <Services />
+      <Pricing />
+      <Contact />
     </>
   );
 }
