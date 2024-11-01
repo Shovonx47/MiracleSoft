@@ -1,7 +1,8 @@
 import Banner from "@/components/Home/Banner";
 import Contact from "@/components/Home/Contact/Contact";
 import Pricing from "@/components/Home/Pricing/Pricing";
-import Services from "@/components/Home/Services/page";
+import Services from "@/components/Home/Services/services";
+ 
 
 export default function Home() {
   return (
