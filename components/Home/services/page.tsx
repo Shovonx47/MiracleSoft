@@ -1,7 +1,8 @@
 import React from "react";
-
-import CardComponent from "./Card";
 import { cards } from "./data";
+import CardComponent from "./Card";
+
+ 
 
 const Services = () => {
   return (
