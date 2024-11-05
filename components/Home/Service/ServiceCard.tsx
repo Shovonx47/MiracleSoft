@@ -55,7 +55,7 @@ const CardComponent = ({
                 src={image}
               />
               <div
-                className={`${isEven ? "right-[30%] md:right-[36px] lg:-right-6" : "left-[30%] md:-left-6"} absolute -bottom-16   md:bottom-[30%] z-10 h-36 md:h-40 w-36 md:w-40 border-4 border-primary bg-[#853aa7] flex justify-center items-center transition duration-700 ease-in-out group-hover:bg-white group-hover:rotate-45  `}
+                className={`${isEven ? "right-[30%] md:right-[36px] lg:-right-6" : "left-[30%] md:-left-6"} absolute -bottom-16   md:bottom-[30%] z-10 h-36 md:h-40 w-36 md:w-40 border-4 border-primary bg-primary flex justify-center items-center transition duration-700 ease-in-out group-hover:bg-white group-hover:rotate-45  `}
               >
                 {icon}
               </div>

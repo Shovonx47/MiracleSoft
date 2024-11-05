@@ -9,7 +9,7 @@ export const cards = [
     image:
       "https://atixscripts.info/demo/html/majestic/assets/images/service/service1.jpg",
     icon: (
-      <FaHeart className="h-14 w-14 text-white transition duration-700 ease-in-out group-hover:text-[#a10101]" />
+      <FaHeart className="h-14 w-14 text-white transition duration-700 ease-in-out group-hover:text-[#81c45c]" />
     ),
   },
 
@@ -20,7 +20,7 @@ export const cards = [
     image:
       "https://atixscripts.info/demo/html/majestic/assets/images/service/service2.jpg",
     icon: (
-      <FaCamera className="h-14 w-14 text-white transition duration-700 ease-in-out group-hover:text-[#a10101]" />
+      <FaCamera className="h-14 w-14 text-white transition duration-700 ease-in-out group-hover:text-[#81c45c]" />
     ),
   },
   {
@@ -30,7 +30,7 @@ export const cards = [
     image:
       "https://atixscripts.info/demo/html/majestic/assets/images/service/service3.jpg",
     icon: (
-      <IoSettingsSharp className="h-14 w-14 text-white transition duration-700 ease-in-out group-hover:text-[#a10101]" />
+      <IoSettingsSharp className="h-14 w-14 text-white transition duration-700 ease-in-out group-hover:text-[#81c45c]" />
     ),
   },
   {
@@ -40,7 +40,7 @@ export const cards = [
     image:
       "https://atixscripts.info/demo/html/majestic/assets/images/service/service4.jpg",
     icon: (
-      <FaCamera className="h-14 w-14 text-white transition duration-700 ease-in-out group-hover:text-[#a10101]" />
+      <FaCamera className="h-14 w-14 text-white transition duration-700 ease-in-out group-hover:text-[#81c45c]" />
     ),
   },
 ];
