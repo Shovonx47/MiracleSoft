@@ -12,7 +12,7 @@ const ContactCard = () => {
       className={`relative lg:w-11/12 mx-auto mt-20 lg:mt-20 lg:my-20 ${showForm ? "h-[600px] lg:h-[555px]" : "h-[300px] lg:h-[555px]"}`}
     >
       <div
-        className={`flex justify-center items-center  max-w-7xl mx-auto bg-red-500 ${showForm ? "h-[650px] lg:h-[650px]" : "h-[308px] lg:h-[650px]"}`}
+        className={`flex justify-center items-center  max-w-7xl mx-auto bg-[#a10101] ${showForm ? "h-[650px] lg:h-[650px]" : "h-[308px] lg:h-[650px]"}`}
       >
         {/* Outer red background */}
         <AnimatePresence mode="popLayout">
@@ -37,12 +37,12 @@ const ContactCard = () => {
               transition={{ duration: 0.5, ease: "easeInOut" }} // Smooth easing and slight delay
             >
               {/* Start a Project box */}
-              <div className="absolute left-0 -top-16 z-50 w-1/2 mx-auto h-full bg-white flex flex-col justify-center items-center space-y-2 shadow-lg cursor-pointer">
-                <h2 className="text-xl lg:text-5xl font-extrabold text-center px-8 leading-tight">
+              <div className="absolute left-0 -top-16 z-50 w-1/2 mx-auto h-full text-primary bg-white flex flex-col justify-center items-center space-y-2 shadow-lg cursor-pointer">
+                <h2 className="text-xl lg:text-4xl font-extrabold text-center px-8 leading-tight">
                   START A PROJECT
                 </h2>
-                <span className="border-b-4 w-8 lg:w-12 border-black flex justify-end ml-16 lg:ml-44" />
-                <p className="text-xl lg:text-5xl font-extrabold text-center leading-tight">
+                <span className="border-b-4 w-8 lg:w-12 border-black flex justify-end ml-16 lg:ml-[17rem]" />
+                <p className="text-xl lg:text-4xl font-extrabold text-right lg:-mr-[13rem] leading-tight">
                   let’s go
                 </p>
               </div>
@@ -57,11 +57,11 @@ const ContactCard = () => {
                   if (e.key === "Enter" || e.key === " ") setShowForm(true);
                 }}
               >
-                <h2 className="text-xl lg:text-5xl font-extrabold text-center px-8 leading-tight">
+                <h2 className="text-xl lg:text-4xl font-extrabold text-center px-8 leading-tight">
                   SEND A MESSAGE
                 </h2>
-                <span className="border-b-4 w-8 lg:w-12 border-white flex justify-start mr-[3.5rem] lg:mr-[12.5rem]" />
-                <p className="text-xl lg:text-5xl font-extrabold text-right  lg:-ml-[7rem]">
+                <span className="border-b-4 w-8 lg:w-12 border-white flex justify-start mr-[3.5rem] lg:mr-[17rem]" />
+                <p className="text-xl lg:text-4xl font-extrabold text-right  lg:-ml-[13rem]">
                   tell us
                 </p>
               </div>

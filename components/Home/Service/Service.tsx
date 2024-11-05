@@ -9,11 +9,11 @@ const Services = () => {
       >
         <div className="my-20">
           <div className="flex justify-center">
-            <span className="flex justify-end w-10 h-2 border-b-[8px] border-[#E74C3C]" />
+            <span className="flex justify-end w-10 h-2 border-b-[8px] border-secondary" />
           </div>
-          <h1 className="text-5xl font-bold text-center py-4">SERVICES</h1>
+          <h1 className="text-5xl font-bold text-center text-primary py-4">Services</h1>
           <div className="flex justify-center">
-            <span className="flex justify-end w-10 h-2 border-b-[8px] border-[#E74C3C]" />
+            <span className="flex justify-end w-10 h-2 border-b-[8px] border-secondary" />
           </div>
         </div>
         {cards.map((card, index) => (

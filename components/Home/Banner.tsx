@@ -17,7 +17,7 @@ const imageTextArray: ImageText[] = [
     text: (
       <>
         Innovating your digital journey with{" "}
-        <span className="text-orange-500 hover:text-white">
+        <span className="text-primary hover:text-white">
           tailored solutions
         </span>
         .
@@ -32,7 +32,7 @@ const imageTextArray: ImageText[] = [
     text: (
       <>
         Transforming your vision into a{" "}
-        <span className="text-orange-500 hover:text-white">
+        <span className="text-primary hover:text-white">
           digital masterpiece
         </span>{" "}
         through technology.
@@ -47,7 +47,7 @@ const imageTextArray: ImageText[] = [
     text: (
       <>
         Crafting IT solutions that drive{" "}
-        <span className="text-orange-500 hover:text-white">success</span> at
+        <span className="text-primary hover:text-white">success</span> at
         every step.
       </>
     ),
@@ -60,7 +60,7 @@ const imageTextArray: ImageText[] = [
     text: (
       <>
         Ensure seamless integration of technology with{" "}
-        <span className="text-orange-500 hover:text-white">
+        <span className="text-primary hover:text-white">
           creative partners
         </span>
         .
@@ -75,7 +75,7 @@ const imageTextArray: ImageText[] = [
     text: (
       <>
         Where technology creates a{" "}
-        <span className="text-orange-500 hover:text-white">digital world</span>{" "}
+        <span className="text-primary hover:text-white">digital world</span>{" "}
         that works for you.
       </>
     ),
@@ -167,14 +167,14 @@ const Banner = () => {
       {/* Slide Number Indicators */}
       <div className="absolute bottom-1/2 flex justify-between w-full">
         <div className="flex items-center">
-          <div className="bg-orange-500 text-white rounded rounded-l-none px-2 md:px-5 py-2 mr-2">
+          <div className="bg-primary text-white rounded rounded-l-none px-2 md:px-5 py-2 mr-2">
             {currentSlide}
           </div>
           <hr className="flex-1 border-t border-white" />
         </div>
         <div className="flex items-center">
           <hr className="flex-1 border-t border-white" />
-          <div className="bg-orange-500 text-white rounded rounded-r-none px-2 md:px-5 py-2 ml-2">
+          <div className="bg-primary text-white rounded rounded-r-none px-2 md:px-5 py-2 ml-2">
             {nextSlide}
           </div>
         </div>
