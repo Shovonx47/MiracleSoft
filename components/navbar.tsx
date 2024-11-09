@@ -13,55 +13,61 @@ import clsx from "clsx";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { siteConfig } from "@/config/site";
- 
+
 
 import logo from "../assets/logo/Miracle.png"
 import Image from "next/image";
+import { useAppSelector } from "@/redux/hooks";
+import { ThemeSwitch } from "./theme-switch";
 
 const Navbar = () => {
   const pathName = usePathname();
-  const [isScrolled, setIsScrolled] = useState(false);
+
   const [isServiceMenuOpen, setIsServiceMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  const isScrolled = useAppSelector((state) => state.scroll.isScrolled);
 
   const handleServiceClick = () => {
     setIsServiceMenuOpen((prev) => !prev);
   };
 
+  const [theme, setTheme] = useState<string>("dark");
+
+  useEffect(() => {
+    // Update the theme based on localStorage changes
+    const handleStorageChange = () => {
+      const newTheme = localStorage.getItem("theme") || "dark";
+
+      setTheme(newTheme);
+    };
+
+    // Listen for storage changes
+    window.addEventListener("storage", handleStorageChange);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener("storage", handleStorageChange);
+    };
+  }, []);
+
   return (
     <NextUINavbar
       className={clsx(
         "lg:px-4 mx-0",
-
-        pathName !== "/" || isScrolled
-          ? "fixed top-0 z-50 translate-y-0 bg-white transition duration-700 ease-in-out"
-          : "bg-transparent text-white shadow-none rounded-none border-none",
+        isScrolled
+          ? `fixed top-0 z-50 translate-y-0 ${theme === "light" ? "bg-white" : "bg-transparent"} transition duration-700 ease-in-out`
+          : "bg-transparent",
       )}
       maxWidth="2xl"
       position="static"
     >
       <NavbarContent>
-        <NextLink className="flex justify-start items-center gap-1" href="/">
-          <Image src={logo} width={100} height={100} className="" alt="miraclesoft"/>
+        <NextLink className="z-50 w-24" href="/">
+          <Image src={logo} width={100} height={100} className="z-50" alt="miraclesoft" />
         </NextLink>
       </NavbarContent>
 
-      <NavbarContent className="basis-full" justify="end">
+      <NavbarContent className="basis-full" justify="center">
         <ul className="hidden lg:flex gap-14">
           {siteConfig.navItems.map((item) => {
             const isActiveSubmenu = item.submenu?.some(
@@ -77,7 +83,7 @@ const Navbar = () => {
                         "cursor-pointer data-[active=true]:text-primary",
                         "group-hover:text-primary font-semibold",
                         (pathName === item.href || isActiveSubmenu) &&
-                          "text-primary",
+                        "text-primary",
                         isScrolled ? "text-primary" : "",
                       )}
                     >
@@ -93,7 +99,7 @@ const Navbar = () => {
                                 className={clsx(
                                   "block px-4 py-2 hover:bg-gray-100 rounded-md hover:text-primary",
                                   pathName === submenuItem.href &&
-                                    "text-primary",
+                                  "text-primary",
                                   isScrolled
                                     ? "text-primary"
                                     : "text-primary",
@@ -191,6 +197,7 @@ const Navbar = () => {
           ))}
         </div>
       </NavbarMenu>
+      <ThemeSwitch isScrolled={isScrolled} setGetTheme={setTheme} />
     </NextUINavbar>
   );
 };

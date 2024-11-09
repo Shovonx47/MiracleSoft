@@ -27,7 +27,7 @@ module.exports = {
         mono: ["var(--font-mono)"],
       },
       backgroundImage: {
-        'custom-gradient': 'linear-gradient(180deg, #112829, #173948)',
+        'custom-gradient': 'linear-gradient(-160deg, #09161c, #173948)',
       },
       spotlight: {
         "0%": { 
@@ -52,7 +52,7 @@ module.exports = {
             foreground: "#f3f4f6",
             primary: {
               DEFAULT: "#81c45c",
-              foreground: "#f3f4f6",
+              
             },
             secondary: {
               DEFAULT: "#c288d3"
@@ -69,11 +69,11 @@ module.exports = {
             background: '#173948',
             foreground: "#ffffff",
             primary: {
-              DEFAULT: "#ffffff",
-              foreground: "#ffffff",
+              DEFAULT: "#81c45c",
+              
             },
             secondary: {
-              DEFAULT: "#fd5602",
+              DEFAULT: "#c288d3"
             },
             focus: "#F182F6",
           },

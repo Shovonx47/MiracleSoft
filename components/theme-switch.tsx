@@ -6,23 +6,38 @@ import { SwitchProps, useSwitch } from "@nextui-org/switch";
 import { useTheme } from "next-themes";
 import { useIsSSR } from "@react-aria/ssr";
 import clsx from "clsx";
+import { usePathname } from "next/navigation";
+
 
 import { SunFilledIcon, MoonFilledIcon } from "@/components/icons";
+import { useAppDispatch } from "@/redux/hooks";
+import { setScrolled } from "@/redux/features/scrollSlice";
 
 export interface ThemeSwitchProps {
   className?: string;
   classNames?: SwitchProps["classNames"];
+  isScrolled: boolean;
+
+  setGetTheme: (e: string) => void;
 }
 
 export const ThemeSwitch: FC<ThemeSwitchProps> = ({
   className,
   classNames,
+  isScrolled,
+
+  setGetTheme,
 }) => {
   const { theme, setTheme } = useTheme();
   const isSSR = useIsSSR();
+  const dispatch = useAppDispatch();
+  const pathName = usePathname();
 
   const onChange = () => {
     theme === "light" ? setTheme("dark") : setTheme("light");
+
+    setGetTheme(theme === "light" ? "dark" : "light");
+    dispatch(setScrolled(window.scrollY > 0));
   };
 
   const {
@@ -61,7 +76,7 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
               "rounded-lg",
               "flex items-center justify-center",
               "group-data-[selected=true]:bg-transparent",
-              "!text-default-500",
+
               "pt-px",
               "px-0",
               "mx-0",
@@ -71,9 +86,16 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
         })}
       >
         {!isSelected || isSSR ? (
-          <SunFilledIcon size={22} />
+          <SunFilledIcon
+            className={`${isScrolled && theme === "light" ? "" : "text-white"}`}
+            size={22}
+          />
         ) : (
-          <MoonFilledIcon size={22} />
+          <MoonFilledIcon
+            className={`${isScrolled || theme === "light" ? "text-gray-800" : "text-white"} 
+          ${pathName === `/` && !isScrolled ? "text-gray-800 lg:text-white " : "text-gray-800"}`}
+            size={22}
+          />
         )}
       </div>
     </Component>

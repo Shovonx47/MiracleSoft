@@ -4,7 +4,7 @@ import CardComponent from "./ServiceCard";
 const Services = () => {
     return (
       <div
-        className="w-full md:w-11/12 lg:w-10/12 mx-auto my-24"
+        className="w-full md:w-11/12 lg:w-10/12 mx-auto my-24 bg-transparent"
         style={{ maxWidth: "1400px" }}
       >
         <div className="my-20">
