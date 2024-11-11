@@ -25,9 +25,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 }) => {
   return (
     <div className="p-[10px] lg:p-0">
-      <div
-        className="rounded-md w-full h-full relative z-0 overflow-hidden p-[3px] before:absolute before:z-[-5] before:left-[-50%] before:top-[-50%] before:w-[200%] before:h-[200%] before:bg-[conic-gradient(#fce694,#fce17e,#FFDF6A,#FCCA53,#fcb102),linear-gradient(#ee48d2,#d013b0),linear-gradient(#c600a5,#5c0081),linear-gradient(#d6feff,#d6feff)] before:bg-[size:50%_50%] before:bg-no-repeat before:bg-[position:0_0,100%_0,100%_100%,0_100%] before:animate-rotate after:absolute after:z-[-1] after:left-[4px] after:top-[4px] after:w-[calc(100%-8px)] after:h-[calc(100%-8px)] after:bg-white dark:after:bg-gradient-to-b after:from-[#173948] after:to-[#112829] after:rounded-[5px] after:animate-opacityChange"
-      >
+      <div className="rounded-md w-full h-full relative z-0 overflow-hidden p-[3px] before:absolute before:z-[-5] before:left-[-50%] before:top-[-50%] before:w-[200%] before:h-[200%] before:bg-[conic-gradient(#fce694,#fce17e,#FFDF6A,#FCCA53,#fcb102),linear-gradient(#ee48d2,#d013b0),linear-gradient(#c600a5,#5c0081),linear-gradient(#d6feff,#d6feff)] before:bg-[size:50%_50%] before:bg-no-repeat before:bg-[position:0_0,100%_0,100%_100%,0_100%] before:animate-rotate after:absolute after:z-[-1] after:left-[4px] after:top-[4px] after:w-[calc(100%-8px)] after:h-[calc(100%-8px)] after:bg-white dark:after:bg-gradient-to-b after:from-[#173948] after:to-[#112829] after:rounded-[5px] after:animate-opacityChange">
         <div className="relative">
           <Link href={live_link}>
             <Image

@@ -4,9 +4,8 @@ import { FaLocationArrow } from "react-icons/fa";
 
 import { projects } from "./data";
 import ProjectCard from "./ProjectCard";
-import MagicButton from "@/components/reusable/MagicButton";
 
- 
+import MagicButton from "@/components/reusable/MagicButton";
 
 const Projects = () => {
   return (

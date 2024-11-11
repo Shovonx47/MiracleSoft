@@ -1,5 +1,5 @@
 import { AiFillDollarCircle } from "react-icons/ai";
-import { MdSchool,MdLocalHospital } from "react-icons/md";
+import { MdSchool, MdLocalHospital } from "react-icons/md";
 import { IoRestaurantSharp } from "react-icons/io5";
 
 export const cards = [

@@ -47,8 +47,8 @@ const imageTextArray: ImageText[] = [
     text: (
       <>
         Crafting IT solutions that drive{" "}
-        <span className="text-primary hover:text-white">success</span> at
-        every step.
+        <span className="text-primary hover:text-white">success</span> at every
+        step.
       </>
     ),
     buttonLabel: "Explore Solutions",
@@ -60,9 +60,7 @@ const imageTextArray: ImageText[] = [
     text: (
       <>
         Ensure seamless integration of technology with{" "}
-        <span className="text-primary hover:text-white">
-          creative partners
-        </span>
+        <span className="text-primary hover:text-white">creative partners</span>
         .
       </>
     ),

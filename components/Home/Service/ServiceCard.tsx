@@ -30,7 +30,7 @@ const CardComponent = ({
               <h1 className="text-center md:text-right text-2xl md:text-3xl font-bold text-primary">
                 {title}
               </h1>
-               
+
               <p className="pt-4 text-center md:text-right text-lg md:text-xl leading-7 md:leading-8 font-light text-gray-800 dark:text-white">
                 {description}
               </p>
@@ -66,7 +66,7 @@ const CardComponent = ({
               <h1 className="text-center md:text-left text-2xl md:text-3xl font-bold text-primary">
                 {title}
               </h1>
-               
+
               <p className="pt-4 text-lg md:text-xl leading-7 md:leading-8 font-light text-gray-800 dark:text-white">
                 {description}
               </p>

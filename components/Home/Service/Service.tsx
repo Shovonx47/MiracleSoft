@@ -2,9 +2,9 @@ import { cards } from "./Data";
 import CardComponent from "./ServiceCard";
 
 const Services = () => {
-    return (
-      <section id="services">
-        <div
+  return (
+    <section id="services">
+      <div
         className="w-full md:w-11/12 lg:w-10/12 mx-auto my-24 bg-transparent"
         style={{ maxWidth: "1400px" }}
       >
@@ -12,7 +12,9 @@ const Services = () => {
           <div className="flex justify-center">
             <span className="flex justify-end w-10 h-2 border-b-[8px] border-secondary" />
           </div>
-          <h1 className="text-5xl font-bold text-center text-primary py-4">Services</h1>
+          <h1 className="text-5xl font-bold text-center text-primary py-4">
+            Services
+          </h1>
           <div className="flex justify-center">
             <span className="flex justify-end w-10 h-2 border-b-[8px] border-secondary" />
           </div>
@@ -28,8 +30,8 @@ const Services = () => {
           />
         ))}
       </div>
-      </section>
-    );
-  };
-  
-  export default Services;
+    </section>
+  );
+};
+
+export default Services;

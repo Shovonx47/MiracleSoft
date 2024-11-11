@@ -7,20 +7,19 @@ export default function FAQ() {
 
   return (
     <section className="mt-14 mb-6 md:mt-24 md:mb-16   p-10">
-      
-
       <div className="my-10">
-          <div className="flex justify-center">
-            <span className="flex justify-end w-10 h-2 border-b-[8px] border-secondary" />
-          </div>
-          <h1 className="text-5xl font-bold text-center text-primary py-4">FAQ&apos;s</h1>
-          <div className="flex justify-center">
-            <span className="flex justify-end w-10 h-2 border-b-[8px] border-secondary" />
-          </div>
-
-          {/* <p className="text-primary pt-3">Got questions? We’ve got answers!</p> */}
+        <div className="flex justify-center">
+          <span className="flex justify-end w-10 h-2 border-b-[8px] border-secondary" />
+        </div>
+        <h1 className="text-5xl font-bold text-center text-primary py-4">
+          FAQ&apos;s
+        </h1>
+        <div className="flex justify-center">
+          <span className="flex justify-end w-10 h-2 border-b-[8px] border-secondary" />
         </div>
 
+        {/* <p className="text-primary pt-3">Got questions? We’ve got answers!</p> */}
+      </div>
 
       <Accordion className="max-w-[85rem] mx-[10px] lg:mx-auto shadow-lg  text-gray-800 dark:text-white p-5">
         <AccordionItem

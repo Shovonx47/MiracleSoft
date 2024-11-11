@@ -9,7 +9,6 @@ import { fontSans } from "@/config/fonts";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/Footer";
 
-
 export const metadata: Metadata = {
   title: {
     default: siteConfig.name,
@@ -45,7 +44,7 @@ export default function RootLayout({
         <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
           <div className="relative flex flex-col h-screen ">
             <Navbar />
-            <main className="dark:bg-custom-gradient -z-20" >{children}</main>
+            <main className="dark:bg-custom-gradient -z-20">{children}</main>
             <Footer />
           </div>
         </Providers>

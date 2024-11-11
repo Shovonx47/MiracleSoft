@@ -8,7 +8,6 @@ import { useIsSSR } from "@react-aria/ssr";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
 
-
 import { SunFilledIcon, MoonFilledIcon } from "@/components/icons";
 import { useAppDispatch } from "@/redux/hooks";
 import { setScrolled } from "@/redux/features/scrollSlice";
@@ -17,16 +16,12 @@ export interface ThemeSwitchProps {
   className?: string;
   classNames?: SwitchProps["classNames"];
   isScrolled: boolean;
-
- 
 }
 
 export const ThemeSwitch: FC<ThemeSwitchProps> = ({
   className,
   classNames,
   isScrolled,
-
-  
 }) => {
   const { theme, setTheme } = useTheme();
   const isSSR = useIsSSR();
@@ -36,7 +31,6 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
   const onChange = () => {
     theme === "light" ? setTheme("dark") : setTheme("light");
 
- 
     dispatch(setScrolled(window.scrollY > 0));
   };
 

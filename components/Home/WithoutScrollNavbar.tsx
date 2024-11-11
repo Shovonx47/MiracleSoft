@@ -23,7 +23,6 @@
 //   active?: boolean;
 // };
 
-
 // const Navbar: React.FC = () => {
 //   const pathName = usePathname();
 //   const [isServiceMenuOpen, setIsServiceMenuOpen] = useState(false);
@@ -38,7 +37,6 @@
 //     <div
 //       className={clsx(
 //         "relative w-5 mx-auto mb-1 mt-[5px]",
-
 
 //       )}
 //     >
@@ -123,7 +121,7 @@
 //                         isScrolled ? "text-gray-800 dark:text-white" : " "
 //                       )}
 //                       href={item.href}
-//                
+//
 //                     >
 //                       {item.label}
 //                     </NextLink>

@@ -2,8 +2,6 @@ import { Card, CardFooter } from "@nextui-org/card";
 import Image from "next/image";
 import { FaLocationArrow } from "react-icons/fa";
 
- 
-
 import MagicButton from "./MagicButton";
 
 interface CardDetails {
@@ -28,7 +26,7 @@ export default function ReusableCard({
     >
       <div className="relative z-10 px-14 py-10">
         <h1 className="text-2xl font-bold text-gray-800">{title}</h1>
-         
+
         <p className="mt-2 text-sm text-gray-800">
           {description || "Available soon."}
         </p>
