@@ -18,7 +18,7 @@ export interface ThemeSwitchProps {
   classNames?: SwitchProps["classNames"];
   isScrolled: boolean;
 
-  setGetTheme: (e: string) => void;
+ 
 }
 
 export const ThemeSwitch: FC<ThemeSwitchProps> = ({
@@ -26,7 +26,7 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
   classNames,
   isScrolled,
 
-  setGetTheme,
+  
 }) => {
   const { theme, setTheme } = useTheme();
   const isSSR = useIsSSR();
@@ -36,7 +36,7 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
   const onChange = () => {
     theme === "light" ? setTheme("dark") : setTheme("light");
 
-    setGetTheme(theme === "light" ? "dark" : "light");
+ 
     dispatch(setScrolled(window.scrollY > 0));
   };
 
@@ -92,7 +92,7 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
           />
         ) : (
           <MoonFilledIcon
-            className={`${isScrolled || theme === "light" ? "text-gray-800" : "text-white"} 
+            className={`${!isScrolled && "text-white"} ${isScrolled || theme === "light" ? "text-gray-800" : "text-white"} 
           ${pathName === `/` && !isScrolled ? "text-gray-800 lg:text-white " : "text-gray-800"}`}
             size={22}
           />

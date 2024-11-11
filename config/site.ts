@@ -10,39 +10,21 @@ export const siteConfig = {
     },
     {
       label: "Services",
-      href: "/services",
-      submenu: [
-        {
-          label: "Account  Management",
-          href: "/services/account-management",
-        },
-        {
-          label: "Institute Management",
-          href: "/services/institute-management",
-        },
-        { label: "Hospital Management", href: "/services/hospital-management" },
-        {
-          label: "Cafe/Restaurant management",
-          href: "/services/cafe&restaurant-management",
-        },
-      ],
+      href: "/#services",
+    },
+    {
+      label: "Profile",
+      href: "/#profile",
     },
     {
       label: "Pricing",
-      href: "/pricing",
+      href: "/#pricing",
     },
     {
-      label: "Portfolio",
-      href: "/portfolio",
+      label: "Contact",
+      href: "/#contact",
     },
-    {
-      label: "Blog",
-      href: "/blog",
-    },
-    {
-      label: "About",
-      href: "/about",
-    },
+     
   ],
   navMenuItems: [
     {
@@ -51,45 +33,21 @@ export const siteConfig = {
     },
     {
       label: "Services",
-      href: "/services",
-      submenu: [
-        {
-          label: "Account  Management",
-          href: "/services/account-management",
-        },
-        {
-          label: "Institute Management",
-          href: "/services/institute-management",
-        },
-        { label: "Hospital Management", href: "/services/hospital-management" },
-        {
-          label: "Cafe/Restaurant management",
-          href: "/services/cafe&restaurant-management",
-        },
-      ],
+      href: "/#services",
+       
+    },
+    {
+      label: "Profile",
+      href: "/#profile",
     },
     {
       label: "Pricing",
-      href: "/pricing",
+      href: "/#pricing",
     },
     {
-      label: "Portfolio",
-      href: "/portfolio",
-    },
-    {
-      label: "Blog",
-      href: "/blog",
-    },
-    {
-      label: "About",
-      href: "/about",
+      label: "Contact",
+      href: "/#contact",
     },
   ],
-  links: {
-    github: "https://github.com/nextui-org/nextui",
-    twitter: "https://twitter.com/getnextui",
-    docs: "https://nextui.org",
-    discord: "https://discord.gg/9b6yyZKmH4",
-    sponsor: "https://patreon.com/jrgarciadev",
-  },
+   
 };

@@ -4,9 +4,9 @@ import ContactCard from "./ContactCard";
 
 const Contact = () => {
   return (
-    <>
+    <section id="contact">
       <ContactCard />
-    </>
+    </section>
   );
 };
 

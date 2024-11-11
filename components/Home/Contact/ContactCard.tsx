@@ -8,7 +8,7 @@ const ContactCard = () => {
   const [showForm, setShowForm] = useState(false);
 
   return (
-    <section
+    <div
       className={`relative lg:w-11/12 mx-auto mt-20 lg:mt-20 lg:my-20 ${showForm ? "h-[600px] lg:h-[555px]" : "h-[300px] lg:h-[555px]"}`}
     >
       <div
@@ -75,7 +75,7 @@ const ContactCard = () => {
       </div>
 
       <div className="absolute inset-0 border-8 border-b-0 border-black translate-x-0 right-0 translate-y-24 -z-10 hidden lg:flex" />
-    </section>
+    </div>
   );
 };
 

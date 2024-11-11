@@ -7,56 +7,74 @@ import {
   NavbarItem,
   NavbarMenuItem,
 } from "@nextui-org/navbar";
-import { Link } from "@nextui-org/link";
 import NextLink from "next/link";
 import clsx from "clsx";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { siteConfig } from "@/config/site";
 
-
-import logo from "../assets/logo/Miracle.png"
+import logo from "../assets/logo/Miracle.png";
 import Image from "next/image";
 import { useAppSelector } from "@/redux/hooks";
 import { ThemeSwitch } from "./theme-switch";
 
-const Navbar = () => {
+type AnimatedUnderlineProps = {
+  active?: boolean;
+};
+
+const Navbar: React.FC = () => {
   const pathName = usePathname();
-
-  const [isServiceMenuOpen, setIsServiceMenuOpen] = useState(false);
-
+ 
+  const [itemName, setItemName] = useState("");
   const isScrolled = useAppSelector((state) => state.scroll.isScrolled);
 
-  const handleServiceClick = () => {
-    setIsServiceMenuOpen((prev) => !prev);
-  };
-
-  const [theme, setTheme] = useState<string>("dark");
+ 
+  // useEffect(() => {
+  //   if (pathName === "/" || pathName === "") {
+  //     window.scrollTo({
+  //       top: 0,
+  //       behavior: "smooth",
+  //     });
+  //   }
+  // }, [pathName]);
 
   useEffect(() => {
-    // Update the theme based on localStorage changes
-    const handleStorageChange = () => {
-      const newTheme = localStorage.getItem("theme") || "dark";
+    // If on the homepage or no hash is present, set the active item to the home item
+    if (pathName === "/" || pathName === "") {
+      setItemName(siteConfig.navItems[0].href); // Assuming the first item in navItems is Home
+    } else {
+      // Set the active item based on the current section hash
+      const currentItem = pathName.split("#")[1] || "";  // Get the section name from the URL hash
+      setItemName(`#${currentItem}`);  // Set item name with hash (#contact, #about, etc.)
+    }
+  }, [pathName]);
 
-      setTheme(newTheme);
-    };
+  // New AnimatedUnderline component using ::after pseudo-element
+  const AnimatedUnderline: React.FC<AnimatedUnderlineProps> = ({ active }) => (
+    <div
+      className={clsx(
+        "relative w-5 mx-auto mb-1 mt-[5px]",
+      )}
+    >
+      <span
+        className={clsx(
+          "absolute bottom-0 left-0 right-0 mx-auto h-[2.3px] w-full transform transition-all duration-700 ease-in-out",
+          active ? `scale-x-100 ${isScrolled ? "bg-gray-800 dark:bg-white" : "bg-white"}` : `scale-x-0 ${isScrolled ? "bg-gray-800" : "bg-white"} dark:bg-white`,
+          "group-hover:scale-x-100"
+        )}
+      ></span>
+    </div>
+  );
 
-    // Listen for storage changes
-    window.addEventListener("storage", handleStorageChange);
-
-    // Clean up the event listener on component unmount
-    return () => {
-      window.removeEventListener("storage", handleStorageChange);
-    };
-  }, []);
+ 
 
   return (
     <NextUINavbar
       className={clsx(
         "lg:px-4 mx-0",
         isScrolled
-          ? `fixed top-0 z-50 translate-y-0 ${theme === "light" ? "bg-white" : "bg-transparent"} transition duration-700 ease-in-out`
-          : "bg-transparent",
+          ? `fixed top-0 z-50 translate-y-0 bg-white dark:bg-[linear-gradient(-160deg,_#09161c,_#173948)] dark:bg-opacity-25 transition duration-700 ease-in-out`
+          : "bg-transparent"
       )}
       maxWidth="2xl"
       position="static"
@@ -70,62 +88,31 @@ const Navbar = () => {
       <NavbarContent className="basis-full" justify="center">
         <ul className="hidden lg:flex gap-14">
           {siteConfig.navItems.map((item) => {
-            const isActiveSubmenu = item.submenu?.some(
-              (submenuItem) => pathName === submenuItem.href,
-            );
+          
+
+ 
 
             return (
               <NavbarItem key={item.href} className="relative group">
-                {item.submenu ? (
-                  <>
-                    <span
+              
+                  <div>
+                    <AnimatedUnderline active={item.href === itemName} />
+                    <NextLink
                       className={clsx(
-                        "cursor-pointer data-[active=true]:text-primary",
-                        "group-hover:text-primary font-semibold",
-                        (pathName === item.href || isActiveSubmenu) &&
-                        "text-primary",
-                        isScrolled ? "text-primary" : "",
+                        "data-[active=true]: font-semibold transition-transform duration-300 ease-in-out transform",
+                        item.href === itemName ? "scale-105 " : "",
+                        isScrolled ? "text-gray-800 dark:text-white" : " "
                       )}
+                      href={item.href}
+                      scroll
+                      passHref
+                      onClick={() => setItemName(item.href)}
                     >
                       {item.label}
-                    </span>
-                    <div className="relative group">
-                      <div className={"arrow-up"}>
-                        <div className="absolute left-0 w-64 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-700 ease-in-out mt-[12px] py-3">
-                          {item.submenu &&
-                            item.submenu.map((submenuItem) => (
-                              <NextLink
-                                key={submenuItem.href}
-                                className={clsx(
-                                  "block px-4 py-2 hover:bg-gray-100 rounded-md hover:text-primary",
-                                  pathName === submenuItem.href &&
-                                  "text-primary",
-                                  isScrolled
-                                    ? "text-primary"
-                                    : "text-primary",
-                                )}
-                                href={submenuItem.href}
-                              >
-                                {submenuItem.label}
-                              </NextLink>
-                            ))}
-                        </div>
-                      </div>
-                    </div>
-                  </>
-                ) : (
-                  <NextLink
-                    className={clsx(
-                      "data-[active=true]:text-primary",
-                      "group-hover:text-primary font-semibold",
-                      pathName === item.href && "text-primary",
-                      isScrolled ? "text-primary" : " ",
-                    )}
-                    href={item.href}
-                  >
-                    {item.label}
-                  </NextLink>
-                )}
+                    </NextLink>
+                    <AnimatedUnderline active={item.href === itemName} />
+                  </div>
+             
               </NavbarItem>
             );
           })}
@@ -137,67 +124,30 @@ const Navbar = () => {
       </NavbarContent>
 
       <NavbarMenu>
-        <div className="mx-4 flex flex-col gap-2 mt-14 text-primary">
+        <div className="mx-4 flex flex-col gap-2 mt-14">
           {siteConfig.navMenuItems.map((item, index) => (
-            <NavbarMenuItem key={`${item}-${index}`}>
-              {item.label === "Services" ? (
-                <>
-                  <span
-                    className="text-lg ml-4 cursor-pointer transition duration-500 ease-in-out text-primary"
-                    role="button"
-                    tabIndex={0} // Make it focusable
-                    onClick={handleServiceClick}
-                    onKeyDown={(e) => {
-                      if (e.key === "Enter" || e.key === " ") {
-                        handleServiceClick();
-                      }
-                    }}
-                  >
-                    {item.label}
-                  </span>
-
-                  {isServiceMenuOpen && item.submenu && (
-                    <div
-                      className={clsx(
-                        "ml-8 mt-2 overflow-hidden transition duration-500 ease-in-out text-primary",
-                        isServiceMenuOpen
-                          ? "max-h-96 transition duration-500 ease-in-out text-primary"
-                          : "max-h-0 text-primary",
-                      )}
-                    >
-                      {item.submenu.map((submenuItem) => (
-                        <Link
-                          key={submenuItem.href}
-                          className={clsx(
-                            "block px-2 py-1 hover:bg-gray-100 text-primary",
-                            pathName === submenuItem.href && "text-primary", // Apply orange color when href matches
-                          )}
-                          href={submenuItem.href}
-                          size="lg"
-                        >
-                          {submenuItem.label}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </>
-              ) : (
-                <Link
+            <NavbarMenuItem key={`${item.label}-${index}`}>
+              {
+                
+                <NextLink
                   className={clsx(
-                    "block px-4 py-2 hover:bg-gray-100 text-primary", // Default black text
-                    pathName === item.href && "text-primary", // Orange when active
+                    "block px-4 py-2 text-gray-800 dark:text-white",
+                    item.href === itemName && "text-primary dark:text-primary"
                   )}
                   href={item.href}
-                  size="lg"
+                  scroll
+                  passHref
+                  onClick={() => setItemName(item.href)}
                 >
                   {item.label}
-                </Link>
-              )}
+                </NextLink>
+              }
             </NavbarMenuItem>
           ))}
         </div>
       </NavbarMenu>
-      <ThemeSwitch isScrolled={isScrolled} setGetTheme={setTheme} />
+
+      <ThemeSwitch isScrolled={isScrolled} />
     </NextUINavbar>
   );
 };
