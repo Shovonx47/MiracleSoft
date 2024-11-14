@@ -5,7 +5,7 @@ const Services = () => {
   return (
     <section id="services">
       <div
-        className="w-full md:w-11/12 lg:w-10/12 mx-auto my-24 bg-transparent"
+        className="w-full md:w-11/12 lg:w-10/12 mx-auto mt-24 mb-[66px] lg:mb-24 bg-transparent"
         style={{ maxWidth: "1400px" }}
       >
         <div className="mt-20 mb-20 lg:mb-32">
