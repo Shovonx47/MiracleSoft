@@ -11,7 +11,9 @@ const Footer = () => {
       }}
     >
       <div className="h-[200px] flex flex-col justify-center items-center text-center space-y-6">
-        <h1 className="text-4xl font-bold text-white tracking-wide">miraclesoft</h1>
+        <h1 className="text-4xl font-bold text-white tracking-wide">
+          miraclesoft
+        </h1>
 
         <div className="flex space-x-4 transform transition-transform duration-700 ease-in-out group-hover:translate-y-0">
           <FaFacebookF className="text-gray-300 border border-gray-300 p-3 h-10 w-10 rounded-full cursor-pointer hover:text-white hover:bg-gray-300 hover:border-transparent transition-colors duration-300 ease-in-out" />

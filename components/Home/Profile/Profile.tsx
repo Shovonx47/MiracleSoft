@@ -4,7 +4,8 @@ import { FaFacebookF, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 const profileData = [
   {
-    image: "https://t4.ftcdn.net/jpg/02/24/86/95/360_F_224869519_aRaeLneqALfPNBzg0xxMZXghtvBXkfIA.jpg",
+    image:
+      "https://t4.ftcdn.net/jpg/02/24/86/95/360_F_224869519_aRaeLneqALfPNBzg0xxMZXghtvBXkfIA.jpg",
     name: "John Doe",
     designation: "Software Engineer",
     socials: {
@@ -14,7 +15,8 @@ const profileData = [
     },
   },
   {
-    image: "https://t4.ftcdn.net/jpg/02/24/86/95/360_F_224869519_aRaeLneqALfPNBzg0xxMZXghtvBXkfIA.jpg",
+    image:
+      "https://t4.ftcdn.net/jpg/02/24/86/95/360_F_224869519_aRaeLneqALfPNBzg0xxMZXghtvBXkfIA.jpg",
     name: "Jane Smith",
     designation: "Product Manager",
     socials: {
@@ -24,7 +26,8 @@ const profileData = [
     },
   },
   {
-    image: "https://t4.ftcdn.net/jpg/02/24/86/95/360_F_224869519_aRaeLneqALfPNBzg0xxMZXghtvBXkfIA.jpg",
+    image:
+      "https://t4.ftcdn.net/jpg/02/24/86/95/360_F_224869519_aRaeLneqALfPNBzg0xxMZXghtvBXkfIA.jpg",
     name: "Alice Johnson",
     designation: "UX Designer",
     socials: {
@@ -34,7 +37,8 @@ const profileData = [
     },
   },
   {
-    image: "https://t4.ftcdn.net/jpg/02/24/86/95/360_F_224869519_aRaeLneqALfPNBzg0xxMZXghtvBXkfIA.jpg",
+    image:
+      "https://t4.ftcdn.net/jpg/02/24/86/95/360_F_224869519_aRaeLneqALfPNBzg0xxMZXghtvBXkfIA.jpg",
     name: "Bob Brown",
     designation: "Data Scientist",
     socials: {
@@ -44,7 +48,8 @@ const profileData = [
     },
   },
   {
-    image: "https://t4.ftcdn.net/jpg/02/24/86/95/360_F_224869519_aRaeLneqALfPNBzg0xxMZXghtvBXkfIA.jpg",
+    image:
+      "https://t4.ftcdn.net/jpg/02/24/86/95/360_F_224869519_aRaeLneqALfPNBzg0xxMZXghtvBXkfIA.jpg",
     name: "Charlie Green",
     designation: "Marketing Specialist",
     socials: {
@@ -54,7 +59,8 @@ const profileData = [
     },
   },
   {
-    image: "https://t4.ftcdn.net/jpg/02/24/86/95/360_F_224869519_aRaeLneqALfPNBzg0xxMZXghtvBXkfIA.jpg",
+    image:
+      "https://t4.ftcdn.net/jpg/02/24/86/95/360_F_224869519_aRaeLneqALfPNBzg0xxMZXghtvBXkfIA.jpg",
     name: "David Lee",
     designation: "Business Analyst",
     socials: {
@@ -65,10 +71,9 @@ const profileData = [
   },
 ];
 
-
 const Profile = () => {
   return (
-    <section id="profile" className="lg:flex lg:flex-wrap mb-24  lg:my-20">
+    <section className="lg:flex lg:flex-wrap mb-24  lg:my-20" id="profile">
       {/* Left section with text */}
       <div className="w-full lg:w-4/12 text-primary text-4xl font-bold lg:h-[500px] flex justify-center lg:justify-end items-center pr-10 mb-24 lg:mb-0">
         <div>
@@ -119,22 +124,22 @@ const Profile = () => {
                 "
             >
               <div>
-              <div className="flex flex-col items-center transform translate-y-[-70%] group-hover:translate-y-0 transition duration-700 ease-in-out">
-                {/* Name from top to center */}
-                <h3 className="md:text-2xl text-xl font-bold text-secondary ">
-                   {profile.name}
-                </h3>
+                <div className="flex flex-col items-center transform translate-y-[-70%] group-hover:translate-y-0 transition duration-700 ease-in-out">
+                  {/* Name from top to center */}
+                  <h3 className="md:text-2xl text-xl font-bold text-secondary ">
+                    {profile.name}
+                  </h3>
 
-                {/* Designation from bottom to center */}
-                <p className="text-sm sm:text-base text-gray-600 ">
-                   {profile.designation}
-                </p>
-              </div>
-              <div className="flex justify-center mt-4 transform translate-y-[70%] group-hover:translate-y-0 transition duration-700 ease-in-out">
-              <FaFacebookF className="text-secondary border p-[11px] h-10 w-10 cursor-pointer hover:text-white hover:bg-secondary hover:border-none"/>
-              <FaLinkedin  className="text-secondary border p-[11px] h-10 w-10 cursor-pointer hover:text-white hover:bg-secondary hover:border-none" />
-              <FaTwitter   className="text-secondary border p-[11px] h-10 w-10 cursor-pointer hover:text-white hover:bg-secondary hover:border-none"/>
-              </div>
+                  {/* Designation from bottom to center */}
+                  <p className="text-sm sm:text-base text-gray-600 ">
+                    {profile.designation}
+                  </p>
+                </div>
+                <div className="flex justify-center mt-4 transform translate-y-[70%] group-hover:translate-y-0 transition duration-700 ease-in-out">
+                  <FaFacebookF className="text-secondary border p-[11px] h-10 w-10 cursor-pointer hover:text-white hover:bg-secondary hover:border-none" />
+                  <FaLinkedin className="text-secondary border p-[11px] h-10 w-10 cursor-pointer hover:text-white hover:bg-secondary hover:border-none" />
+                  <FaTwitter className="text-secondary border p-[11px] h-10 w-10 cursor-pointer hover:text-white hover:bg-secondary hover:border-none" />
+                </div>
               </div>
             </span>
           </div>

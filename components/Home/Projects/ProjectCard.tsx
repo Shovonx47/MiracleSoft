@@ -15,12 +15,11 @@ interface ProjectCardProps {
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
-  index,
   name,
   description,
   tags,
   image,
-  source_code_link,
+
   live_link,
 }) => {
   return (
