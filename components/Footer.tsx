@@ -8,7 +8,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <div className="mt-2 z-10 py-10 bg-white dark:bg-gradient-to-br from-[#09161c] to-[#173948]">
+    <div className="mt-3 z-10 py-10 bg-white dark:bg-gradient-to-br from-[#09161c] to-[#173948]">
       <div className="h-[200px] flex flex-col justify-center items-center text-center space-y-6">
         <div className="z-50 ">
           <Image

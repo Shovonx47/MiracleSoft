@@ -9,7 +9,7 @@ const ContactCard = () => {
 
   return (
     <div
-      className={`relative lg:w-11/12 mx-auto mt-20 lg:mt-20  lg:pt-5 lg:my-20 ${showForm ? "h-[600px] lg:h-[555px]" : "h-[300px] lg:h-[555px]"}`}
+      className={`relative lg:w-11/12 mx-auto mt-20 lg:mt-20  lg:pt-5 lg:my-20 ${showForm ? "h-[600px] lg:h-[555px]" : "h-[300px] lg:h-[570px]"}`}
     >
       <div
         className={`flex justify-center items-center  max-w-7xl mx-auto bg-[#a10101] ${showForm ? "h-[650px] lg:h-[650px]" : "h-[308px] lg:h-[650px]"}`}
