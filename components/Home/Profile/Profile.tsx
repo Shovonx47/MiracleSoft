@@ -131,9 +131,7 @@ const Profile = () => {
                   </h3>
 
                   {/* Designation from bottom to center */}
-                  <p className="text-sm text-gray-600">
-                    {profile.designation}
-                  </p>
+                  <p className="text-sm text-gray-600">{profile.designation}</p>
                 </div>
                 <div className="flex justify-center mt-4 transform translate-y-[70%] group-hover:translate-y-0 transition duration-700 ease-in-out">
                   <FaFacebookF className="text-primary border p-[11px] h-10 w-10 cursor-pointer hover:text-white hover:bg-primary hover:border-none" />

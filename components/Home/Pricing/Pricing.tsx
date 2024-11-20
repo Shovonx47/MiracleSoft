@@ -51,7 +51,7 @@ const pricingData = [
 
 const Pricing: React.FC = () => {
   return (
-    <section id="pricing" className="pt-20">
+    <section className="pt-20" id="pricing">
       <div className="lg:w-9/12 mx-auto ">
         <div className="mb-20 lg:mt-0">
           <div className="flex justify-center">

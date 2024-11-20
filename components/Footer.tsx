@@ -1,31 +1,28 @@
 import { FaFacebookF, FaLinkedin, FaTwitter } from "react-icons/fa";
+import Image from "next/image";
+
 import logo from "../assets/logo/Miracle.png";
 import darkLogo from "../assets/logo/Dark Logo 02.png";
-import Image from "next/image";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <div
-      className="mt-2 z-10 py-10 bg-white dark:bg-gradient-to-br from-[#09161c] to-[#173948]"
-
-
-    >
+    <div className="mt-2 z-10 py-10 bg-white dark:bg-gradient-to-br from-[#09161c] to-[#173948]">
       <div className="h-[200px] flex flex-col justify-center items-center text-center space-y-6">
         <div className="z-50 ">
           <Image
             alt="miraclesoft"
             className="z-50 dark:hidden"
-            src={logo}
             height={180}
+            src={logo}
             width={180}
           />
           <Image
             alt="miraclesoft"
             className="z-50 hidden dark:flex"
-            src={darkLogo}
             height={180}
+            src={darkLogo}
             width={180}
           />
         </div>
