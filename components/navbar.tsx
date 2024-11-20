@@ -14,11 +14,12 @@ import { usePathname } from "next/navigation";
 import Image from "next/image";
 
 import logo from "../assets/logo/Miracle.png";
+import darkLogo from "../assets/logo/Dark Logo 02.png";
 
 import { ThemeSwitch } from "./theme-switch";
 
 import { siteConfig } from "@/config/site";
-import { useAppSelector } from "@/redux/hooks";
+ 
 
 type AnimatedUnderlineProps = {
   active?: boolean;
@@ -28,16 +29,9 @@ const Navbar: React.FC = () => {
   const pathName = usePathname();
 
   const [itemName, setItemName] = useState("");
-  const isScrolled = useAppSelector((state) => state.scroll.isScrolled);
+  // const isScrolled = useAppSelector((state) => state.scroll.isScrolled);
 
-  // useEffect(() => {
-  //   if (pathName === "/" || pathName === "") {
-  //     window.scrollTo({
-  //       top: 0,
-  //       behavior: "smooth",
-  //     });
-  //   }
-  // }, [pathName]);
+ 
 
   useEffect(() => {
     // If on the homepage or no hash is present, set the active item to the home item
@@ -58,8 +52,8 @@ const Navbar: React.FC = () => {
         className={clsx(
           "absolute bottom-0 left-0 right-0 mx-auto h-[2.3px] w-full transform transition-all duration-700 ease-in-out",
           active
-            ? `scale-x-100 ${isScrolled ? "bg-gray-800 dark:bg-white" : "bg-white"}`
-            : `scale-x-0 ${isScrolled ? "bg-gray-800" : "bg-white"} dark:bg-white`,
+            ? `scale-x-100 bg-gray-800 dark:bg-white`
+            : `scale-x-0 bg-gray-800 dark:bg-white`,
           "group-hover:scale-x-100",
         )}
       />
@@ -68,12 +62,8 @@ const Navbar: React.FC = () => {
 
   return (
     <NextUINavbar
-      className={clsx(
-        "lg:px-4 mx-0",
-        isScrolled
-          ? `fixed top-0 z-50 translate-y-0 bg-white dark:bg-[linear-gradient(-160deg,_#09161c,_#173948)] dark:bg-opacity-25 transition duration-700 ease-in-out`
-          : "bg-transparent",
-      )}
+      className=
+        "lg:px-4 mx-0 fixed top-0 z-50 translate-y-0 bg-white dark:bg-[linear-gradient(-160deg,_#09161c,_#173948)] dark:bg-opacity-25 transition duration-700 ease-in-out"
       maxWidth="2xl"
       position="static"
     >
@@ -81,9 +71,16 @@ const Navbar: React.FC = () => {
         <NextLink className="z-50 w-24" href="/">
           <Image
             alt="miraclesoft"
-            className="z-50"
+            className="z-50 dark:hidden"
             height={100}
             src={logo}
+            width={100}
+          />
+          <Image
+            alt="miraclesoft"
+            className="z-50 hidden dark:flex"
+            height={100}
+            src={darkLogo}
             width={100}
           />
         </NextLink>
@@ -102,7 +99,7 @@ const Navbar: React.FC = () => {
                     className={clsx(
                       "data-[active=true]: font-semibold transition-transform duration-300 ease-in-out transform",
                       item.href === itemName ? "scale-105 " : "",
-                      isScrolled ? "text-gray-800 dark:text-white" : " ",
+                       "text-gray-800 dark:text-white",
                     )}
                     href={item.href}
                     onClick={() => setItemName(item.href)}
@@ -118,7 +115,7 @@ const Navbar: React.FC = () => {
       </NavbarContent>
 
       <NavbarContent className="lg:hidden basis-1 pl-4" justify="end">
-        <NavbarMenuToggle />
+        <NavbarMenuToggle className="text-gray-900 dark:text-white font-light"/>
       </NavbarContent>
 
       <NavbarMenu>
@@ -144,7 +141,7 @@ const Navbar: React.FC = () => {
         </div>
       </NavbarMenu>
 
-      <ThemeSwitch isScrolled={isScrolled} />
+      <ThemeSwitch  />
     </NextUINavbar>
   );
 };

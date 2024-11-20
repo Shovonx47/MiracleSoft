@@ -15,13 +15,13 @@ import { setScrolled } from "@/redux/features/scrollSlice";
 export interface ThemeSwitchProps {
   className?: string;
   classNames?: SwitchProps["classNames"];
-  isScrolled: boolean;
+
 }
 
 export const ThemeSwitch: FC<ThemeSwitchProps> = ({
   className,
   classNames,
-  isScrolled,
+
 }) => {
   const { theme, setTheme } = useTheme();
   const isSSR = useIsSSR();
@@ -79,18 +79,17 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
           ),
         })}
       >
-        {!isSelected || isSSR ? (
-          <SunFilledIcon
-            className={`${isScrolled && theme === "light" ? "" : "text-white"}`}
-            size={22}
-          />
-        ) : (
-          <MoonFilledIcon
-            className={`${!isScrolled && "text-white"} ${isScrolled || theme === "light" ? "text-gray-800" : "text-white"} 
-          ${pathName === `/` && !isScrolled ? "text-gray-800 lg:text-white " : "text-gray-800"}`}
-            size={22}
-          />
-        )}
+
+        <SunFilledIcon
+          className={` text-gray-800 dark:hidden`}
+          size={22}
+        />
+
+        <MoonFilledIcon
+          className={`text-white hidden dark:flex`}
+          size={22}
+        />
+
       </div>
     </Component>
   );

@@ -99,9 +99,9 @@ const Banner = () => {
   const nextSlide = nextIndex + 1; // Next slide, wrapping around
 
   return (
-    <div className="relative flex flex-col items-center justify-center w-full -mt-[60px]">
+    <div className="relative flex flex-col items-center justify-center w-full mt-16">
       {/* Image */}
-      <div className="relative w-full h-[450px] md:h-[720px] overflow-hidden">
+      <div className="relative w-full h-[450px] md:h-[680px] overflow-hidden">
         {/* Current Image */}
         <motion.img
           key={imageTextArray[index].image}
@@ -163,7 +163,7 @@ const Banner = () => {
       </div>
 
       {/* Slide Number Indicators */}
-      <div className="absolute bottom-1/2 flex justify-between w-full">
+      {/* <div className="absolute bottom-1/2 flex justify-between w-full">
         <div className="flex items-center">
           <div className="bg-primary text-white rounded rounded-l-none px-2 md:px-5 py-2 mr-2">
             {currentSlide}
@@ -176,7 +176,7 @@ const Banner = () => {
             {nextSlide}
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -9,7 +9,7 @@ const ContactCard = () => {
 
   return (
     <div
-      className={`relative lg:w-11/12 mx-auto mt-20 lg:mt-20 lg:my-20 ${showForm ? "h-[600px] lg:h-[555px]" : "h-[300px] lg:h-[555px]"}`}
+      className={`relative lg:w-11/12 mx-auto mt-20 lg:mt-20  lg:pt-5 lg:my-20 ${showForm ? "h-[600px] lg:h-[555px]" : "h-[300px] lg:h-[555px]"}`}
     >
       <div
         className={`flex justify-center items-center  max-w-7xl mx-auto bg-[#a10101] ${showForm ? "h-[650px] lg:h-[650px]" : "h-[308px] lg:h-[650px]"}`}
@@ -41,7 +41,7 @@ const ContactCard = () => {
                 <h2 className="text-xl lg:text-4xl font-extrabold text-center px-8 leading-tight">
                   START A PROJECT
                 </h2>
-                <span className="border-b-4 w-8 lg:w-12 border-black flex justify-end ml-16 lg:ml-[17rem]" />
+                <span className="border-b-4 w-8 lg:w-12 border-primary flex justify-end ml-16 lg:ml-[17rem]" />
                 <p className="text-xl lg:text-4xl font-extrabold text-right lg:-mr-[13rem] leading-tight">
                   let’s go
                 </p>
@@ -49,7 +49,7 @@ const ContactCard = () => {
 
               {/* Send a Message box */}
               <div
-                className="absolute bottom-4 lg:bottom-0 right-0 lg:right-16 w-1/2 h-full bg-black text-white flex flex-col justify-center items-center space-y-2 p-8 shadow-lg z-20 cursor-pointer"
+                className="absolute bottom-4 lg:bottom-0 right-0 lg:right-16 w-1/2 h-full bg-primary text-white flex flex-col justify-center items-center space-y-2 p-8 shadow-lg z-20 cursor-pointer"
                 role="button"
                 tabIndex={0}
                 onClick={() => setShowForm(true)}
@@ -68,13 +68,13 @@ const ContactCard = () => {
 
               {/* Outline boxes */}
               <div className="absolute inset-0 w-5/12 md:w-[45.8%] lg:w-1/2 border-4 lg:border-8 border-white z-0 border-r-0 translate-x-8 lg:-translate-x-8 -translate-y-12 lg:-translate-y-4" />
-              <div className="absolute inset-0 border-4 lg:border-8 border-black translate-x-[120%] md:translate-x-[95%] lg:translate-x-[95%] border-l-0  w-5/12 md:w-[50%] lg:w-1/2 right-0 -translate-y-8" />
+              <div className="absolute inset-0 border-4 lg:border-8 border-primary translate-x-[120%] md:translate-x-[95%] lg:translate-x-[95%] border-l-0  w-5/12 md:w-[50%] lg:w-1/2 right-0 -translate-y-8" />
             </motion.div>
           )}
         </AnimatePresence>
       </div>
 
-      <div className="absolute inset-0 border-8 border-b-0 border-black translate-x-0 right-0 translate-y-24 -z-10 hidden lg:flex" />
+      <div className="absolute inset-0 border-8 border-b-0 border-[#a10101] translate-x-0 right-0 translate-y-24 -z-10 hidden lg:flex" />
     </div>
   );
 };

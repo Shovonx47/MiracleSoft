@@ -73,7 +73,7 @@ const profileData = [
 
 const Profile = () => {
   return (
-    <section className="lg:flex lg:flex-wrap mb-24  lg:my-20" id="profile">
+    <section className="lg:flex lg:flex-wrap mb-5 pt-20 " id="profile">
       {/* Left section with text */}
       <div className="w-full lg:w-4/12 text-primary text-4xl font-bold lg:h-[500px] flex justify-center lg:justify-end items-center pr-10 mb-24 lg:mb-0">
         <div>
@@ -105,10 +105,10 @@ const Profile = () => {
                     absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
                     h-[180px] w-[265px]
                     scale-x-0 group-hover:scale-x-100
-                    border-4 border-secondary transition-all duration-700 ease-in-out
+                    border-4 border-primary transition-all duration-700 ease-in-out
                     origin-center z-40 shadow-lg
                     group-hover:rotate-[900deg]
-                    group-hover:bg-secondary/10
+                    group-hover:bg-primary/10
                 "
             />
 
@@ -126,19 +126,19 @@ const Profile = () => {
               <div>
                 <div className="flex flex-col items-center transform translate-y-[-70%] group-hover:translate-y-0 transition duration-700 ease-in-out">
                   {/* Name from top to center */}
-                  <h3 className="md:text-2xl text-xl font-bold text-secondary ">
+                  <h3 className="md:text-2xl text-xl font-bold text-primary ">
                     {profile.name}
                   </h3>
 
                   {/* Designation from bottom to center */}
-                  <p className="text-sm sm:text-base text-gray-600 ">
+                  <p className="text-sm text-gray-600">
                     {profile.designation}
                   </p>
                 </div>
                 <div className="flex justify-center mt-4 transform translate-y-[70%] group-hover:translate-y-0 transition duration-700 ease-in-out">
-                  <FaFacebookF className="text-secondary border p-[11px] h-10 w-10 cursor-pointer hover:text-white hover:bg-secondary hover:border-none" />
-                  <FaLinkedin className="text-secondary border p-[11px] h-10 w-10 cursor-pointer hover:text-white hover:bg-secondary hover:border-none" />
-                  <FaTwitter className="text-secondary border p-[11px] h-10 w-10 cursor-pointer hover:text-white hover:bg-secondary hover:border-none" />
+                  <FaFacebookF className="text-primary border p-[11px] h-10 w-10 cursor-pointer hover:text-white hover:bg-primary hover:border-none" />
+                  <FaLinkedin className="text-primary border p-[11px] h-10 w-10 cursor-pointer hover:text-white hover:bg-primary hover:border-none" />
+                  <FaTwitter className="text-primary border p-[11px] h-10 w-10 cursor-pointer hover:text-white hover:bg-primary hover:border-none" />
                 </div>
               </div>
             </span>
