@@ -4,47 +4,47 @@ import PricingCard from "./PricingCard";
 
 const pricingData = [
   {
-    price: 99,
+    price: "Monthly 5000 Taka",
     plan: "Basic Plan",
     features: [
-      "Free Setup",
-      "20GB Storage",
-      "Unlimited Users",
-      "Free WordPress Tutorials",
-      "Included Live Streaming",
+      "1 - 499 User Access",
+      "Additional Package",
+      "Software Installments - 30,000/-",
+      "Finger Matching Installation - 20,000/- (Per Matching)",
+      "Digital ID Card at Actual Cost",
     ],
   },
   {
-    price: 199,
+    price: "10 Taka Per Subscription",
     plan: "Standard Plan",
     features: [
-      "Free Setup",
-      "20GB Storage",
-      "Unlimited Users",
-      "Free WordPress Tutorials",
-      "Included Live Streaming",
+      "500 - 1999 User Access",
+      "Additional Package",
+      "Software Installments - 30,000/-",
+      "Finger Matching Installation - 20,000/- (Per Matching)",
+      "Digital ID Card at Actual Cost",
     ],
   },
   {
-    price: 299,
+    price: "08 Taka Per Subscription",
     plan: "Premium Plan",
     features: [
-      "Free Setup",
-      "20GB Storage",
-      "Unlimited Users",
-      "Free WordPress Tutorials",
-      "Included Live Streaming",
+      "2000 - 4999 User Access",
+      "Additional Package",
+      "Software Installments - 30,000/-",
+      "Finger Matching Installation - 20,000/- (Per Matching)",
+      "Digital ID Card at Actual Cost",
     ],
   },
   {
-    price: 399,
+    price: "05 Taka Per Subscription",
     plan: "Ultimate Plan",
     features: [
-      "Free Setup",
-      "20GB Storage",
-      "Unlimited Users",
-      "Free WordPress Tutorials",
-      "Included Live Streaming",
+      "5000+ User Access",
+      "Additional Package",
+      "Software Installments - 30,000/-",
+      "Finger Matching Installation - 20,000/- (Per Matching)",
+      "Digital ID Card at Actual Cost",
     ],
   },
 ];
@@ -64,7 +64,7 @@ const Pricing: React.FC = () => {
             <span className="flex justify-end w-10 h-2 border-b-[8px] border-secondary" />
           </div>
         </div>
-        <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-6">
           {pricingData.map((data, index) => (
             <PricingCard
               key={index}

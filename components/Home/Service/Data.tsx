@@ -6,7 +6,7 @@ export const cards = [
   {
     title: "Account Management",
     description:
-      "Morbi in velit ligula, eget vulputate ligula viverra, mi ae sollicitudin rhoncusante roin gravida nibh vel eget vulputate ligula viverra, mi ae",
+      "Take control of your finances with our powerful account management software. Easy to use, improve accuracy, save time, and reduce errors. Manage your finances effortlessly, stay organized, and enjoy seamless integration and real-time finance insights for better decision-making! Sign up for a free trial today!",
     image:
       "https://atixscripts.info/demo/html/majestic/assets/images/service/service1.jpg",
     icon: (
@@ -17,7 +17,7 @@ export const cards = [
   {
     title: "Institute Management",
     description:
-      "Morbi in velit ligula, eget vulputate ligula viverra, mi ae sollicitudin rhoncusante roin gravida nibh vel eget vulputate ligula viverra, mi ae",
+      "Our user-friendly institute management software will revolutionize your institute's operations. Where you can manage daily tasks, track the progress of students, reduce stress, and focus on what matters most to simplify administration and boost productivity effortlessly!",
     image:
       "https://atixscripts.info/demo/html/majestic/assets/images/service/service2.jpg",
     icon: (
@@ -27,7 +27,7 @@ export const cards = [
   {
     title: "Hospital Management",
     description:
-      "Morbi in velit ligula, eget vulputate ligula viverra, mi ae sollicitudin rhoncusante roin gravida nibh vel eget vulputate ligula viverra, mi ae",
+      "Manage hospitals effectively with our comprehensive solution to hospital management. Improve hospital operations, strategic planning, financial management, staff productivity, care quality, and much more to stay competitive in the healthcare industry.",
     image:
       "https://atixscripts.info/demo/html/majestic/assets/images/service/service3.jpg",
     icon: (
@@ -37,7 +37,7 @@ export const cards = [
   {
     title: "Restaurant Management ",
     description:
-      "Morbi in velit ligula, eget vulputate ligula viverra, mi ae sollicitudin rhoncusante roin gravida nibh vel eget vulputate ligula viverra, mi ae",
+      "Discover powerful software designed for your restaurants. Manage orders, staff, and inventory effortlessly. Try it now for a smoother operation, increase profits, and provide exceptional service with ease!",
     image:
       "https://atixscripts.info/demo/html/majestic/assets/images/service/service4.jpg",
     icon: (
