@@ -9,7 +9,7 @@ const pricingData = [
     features: [
       "1 - 499 User Access",
       "Additional Package",
-      "Software Installments - 30,000/-",
+      "Software Installments- 30,000/-",
       "Finger Matching Installation - 20,000/- (Per Matching)",
       "Digital ID Card at Actual Cost",
     ],
@@ -20,7 +20,7 @@ const pricingData = [
     features: [
       "500 - 1999 User Access",
       "Additional Package",
-      "Software Installments - 30,000/-",
+      "Software Installments- 30,000/-",
       "Finger Matching Installation - 20,000/- (Per Matching)",
       "Digital ID Card at Actual Cost",
     ],
@@ -31,7 +31,7 @@ const pricingData = [
     features: [
       "2000 - 4999 User Access",
       "Additional Package",
-      "Software Installments - 30,000/-",
+      "Software Installments- 30,000/-",
       "Finger Matching Installation - 20,000/- (Per Matching)",
       "Digital ID Card at Actual Cost",
     ],
@@ -42,7 +42,7 @@ const pricingData = [
     features: [
       "5000+ User Access",
       "Additional Package",
-      "Software Installments - 30,000/-",
+      "Software Installments- 30,000/-",
       "Finger Matching Installation - 20,000/- (Per Matching)",
       "Digital ID Card at Actual Cost",
     ],
