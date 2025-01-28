@@ -4,71 +4,59 @@ import { FaFacebookF, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 const profileData = [
   {
-    image:
-      "https://t4.ftcdn.net/jpg/02/24/86/95/360_F_224869519_aRaeLneqALfPNBzg0xxMZXghtvBXkfIA.jpg",
-    name: "John Doe",
+    image: "https://res.cloudinary.com/div4esbm1/image/upload/v1738055373/premium_vector-1725984427567-a4f3c4483449.png",
+    name: "Lutfun Nahar Nisha",
+    designation: "UI/UX Designer",
+    socials: {
+      facebook: "https://facebook.com",
+      linkedin: "https://linkedin.com",
+    },
+  },
+  {
+    image: "https://res.cloudinary.com/div4esbm1/image/upload/v1738054615/Edited_Picture.png",
+    name: "Shekh Rasel Masrur Ahmmad",
+    designation: "Web Developer",
+    socials: {
+      facebook: "https://facebook.com",
+      linkedin: "https://linkedin.com",
+    },
+  },
+  {
+    image: "https://res.cloudinary.com/div4esbm1/image/upload/v1738054448/ijnu8ngzpn1ejab8fali.jpg",
+    name: "Md. Omar Faruk",
+    designation: "Web Developer",
+    socials: {
+      facebook: "https://facebook.com",
+      linkedin: "https://linkedin.com",
+    },
+  },
+  {
+    image: "https://res.cloudinary.com/div4esbm1/image/upload/v1738054723/1718886102938.jpg",
+    name: "Saiful Islam Shovon",
     designation: "Software Engineer",
     socials: {
-      facebook: "https://facebook.com/johndoe",
-      twitter: "https://twitter.com/johndoe",
-      linkedin: "https://linkedin.com/in/johndoe",
+      facebook: "https://facebook.com",
+      linkedin: "https://linkedin.com",
     },
   },
-  {
-    image:
-      "https://t4.ftcdn.net/jpg/02/24/86/95/360_F_224869519_aRaeLneqALfPNBzg0xxMZXghtvBXkfIA.jpg",
-    name: "Jane Smith",
-    designation: "Product Manager",
-    socials: {
-      facebook: "https://facebook.com/janesmith",
-      twitter: "https://twitter.com/janesmith",
-      linkedin: "https://linkedin.com/in/janesmith",
-    },
-  },
-  {
-    image:
-      "https://t4.ftcdn.net/jpg/02/24/86/95/360_F_224869519_aRaeLneqALfPNBzg0xxMZXghtvBXkfIA.jpg",
-    name: "Alice Johnson",
-    designation: "UX Designer",
-    socials: {
-      facebook: "https://facebook.com/alicejohnson",
-      twitter: "https://twitter.com/alicejohnson",
-      linkedin: "https://linkedin.com/in/alicejohnson",
-    },
-  },
-  {
-    image:
-      "https://t4.ftcdn.net/jpg/02/24/86/95/360_F_224869519_aRaeLneqALfPNBzg0xxMZXghtvBXkfIA.jpg",
-    name: "Bob Brown",
-    designation: "Data Scientist",
-    socials: {
-      facebook: "https://facebook.com/bobbrown",
-      twitter: "https://twitter.com/bobbrown",
-      linkedin: "https://linkedin.com/in/bobbrown",
-    },
-  },
-  {
-    image:
-      "https://t4.ftcdn.net/jpg/02/24/86/95/360_F_224869519_aRaeLneqALfPNBzg0xxMZXghtvBXkfIA.jpg",
-    name: "Charlie Green",
-    designation: "Marketing Specialist",
-    socials: {
-      facebook: "https://facebook.com/charliegreen",
-      twitter: "https://twitter.com/charliegreen",
-      linkedin: "https://linkedin.com/in/charliegreen",
-    },
-  },
-  {
-    image:
-      "https://t4.ftcdn.net/jpg/02/24/86/95/360_F_224869519_aRaeLneqALfPNBzg0xxMZXghtvBXkfIA.jpg",
-    name: "David Lee",
-    designation: "Business Analyst",
-    socials: {
-      facebook: "https://facebook.com/davidlee",
-      twitter: "https://twitter.com/davidlee",
-      linkedin: "https://linkedin.com/in/davidlee",
-    },
-  },
+  // {
+  //   image: "https://res.cloudinary.com/div4esbm1/image/upload/v1738054448/ijnu8ngzpn1ejab8fali.jpg",
+  //   name: "Charlie Green",
+  //   designation: "Marketing Specialist",
+  //   socials: {
+  //     facebook: "https://facebook.com",
+  //     linkedin: "https://linkedin.com",
+  //   },
+  // },
+  // {
+  //   image: "https://res.cloudinary.com/div4esbm1/image/upload/v1738054615/Edited_Picture.png",
+  //   name: "David Lee",
+  //   designation: "Business Analyst",
+  //   socials: {
+  //     facebook: "https://facebook.com",
+  //     linkedin: "https://linkedin.com",
+  //   },
+  // },
 ];
 
 const Profile = () => {
@@ -95,7 +83,7 @@ const Profile = () => {
           <div key={index} className="relative group overflow-hidden">
             <Image
               alt={`Image ${index + 1}`}
-              className="w-screen min-h-[250px] object-cover rounded-none transition-all duration-700 ease-in-out cursor-pointer"
+              className="w-screen min-h-[250px] max-h-[350px] object-cover rounded-none transition-all duration-700 ease-in-out cursor-pointer"
               src={profile.image}
             />
 
@@ -126,7 +114,7 @@ const Profile = () => {
               <div>
                 <div className="flex flex-col items-center transform translate-y-[-70%] group-hover:translate-y-0 transition duration-700 ease-in-out">
                   {/* Name from top to center */}
-                  <h3 className="md:text-2xl text-xl font-bold text-primary ">
+                  <h3 className="md:text-2xl text-xl font-bold text-primary text-center">
                     {profile.name}
                   </h3>
 
