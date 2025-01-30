@@ -48,7 +48,7 @@ const ContactCard = () => {
                 </h2>
                 <span className="border-b-4 w-8 lg:w-12 border-primary flex justify-end ml-16 lg:ml-[17rem]" />
                 <p className="text-xl lg:text-4xl font-extrabold text-right lg:-mr-[13rem] leading-tight">
-                  let's go
+                  let&apos;s go
                 </p>
               </div>
 
