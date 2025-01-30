@@ -1,14 +1,8 @@
 "use client";
 import React, { useState } from "react";
-import { motion } from "framer-motion";
-import dynamic from "next/dynamic";
+import { motion, AnimatePresence } from "framer-motion";
 
 import FormPage from "./FormPage";
-
-const AnimatePresence = dynamic(
-  () => import("framer-motion").then((mod) => mod.AnimatePresence),
-  { ssr: false }
-);
 
 const ContactCard = () => {
   const [showForm, setShowForm] = useState(false);
@@ -20,7 +14,7 @@ const ContactCard = () => {
       <div
         className={`flex justify-center items-center  max-w-7xl mx-auto bg-[#a10101] ${showForm ? "h-[650px] lg:h-[650px]" : "h-[308px] lg:h-[650px]"}`}
       >
-        <AnimatePresence mode="wait">
+        <AnimatePresence mode="wait" initial={false}>
           {showForm ? (
             <motion.div
               key="form"
