@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { motion, LazyMotion, domAnimation } from "framer-motion";
-import { AnimatePresence } from "framer-motion/dist/framer-motion";
+import { motion, AnimatePresence, domAnimation, LazyMotion } from "framer-motion";
 
 import FormPage from "./FormPage";
 
