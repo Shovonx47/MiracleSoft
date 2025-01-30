@@ -15,19 +15,20 @@ const ContactCard = () => {
         className={`flex justify-center items-center  max-w-7xl mx-auto bg-[#a10101] ${showForm ? "h-[650px] lg:h-[650px]" : "h-[308px] lg:h-[650px]"}`}
       >
         {/* Outer red background */}
-        <AnimatePresence mode="popLayout">
-          {showForm ? (
+        <AnimatePresence>
+          {showForm && (
             <motion.div
               key="form"
-              animate={{ y: 0, opacity: 1 }} // Animate to center
+              animate={{ y: 0, opacity: 1 }}
               className="relative w-full  flex justify-center items-center"
-              exit={{ y: "100%", opacity: 0 }} // Exit to bottom
-              initial={{ y: "100%", opacity: 0 }} // Start from bottom
+              exit={{ y: "100%", opacity: 0 }}
+              initial={{ y: "100%", opacity: 0 }}
               transition={{ duration: 0.5, ease: "easeInOut" }}
             >
               <FormPage closeForm={() => setShowForm(false)} />
             </motion.div>
-          ) : (
+          )}
+          {!showForm && (
             <motion.div
               key="main-content"
               animate={{ y: 0, opacity: 1 }} // Animate to center
