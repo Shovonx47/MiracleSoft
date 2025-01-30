@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 import FormPage from "./FormPage";
 
@@ -9,35 +9,32 @@ const ContactCard = () => {
 
   return (
     <div
-      className={`relative lg:w-11/12 mx-auto mt-20 lg:mt-20  lg:pt-5 lg:my-20 ${
-        showForm ? "h-[600px] lg:h-[555px]" : "h-[300px] lg:h-[570px]"
-      }`}
+      className={`relative lg:w-11/12 mx-auto mt-20 lg:mt-20  lg:pt-5 lg:my-20 ${showForm ? "h-[600px] lg:h-[555px]" : "h-[300px] lg:h-[570px]"}`}
     >
       <div
-        className={`flex justify-center items-center max-w-7xl mx-auto bg-[#a10101] ${
-          showForm ? "h-[650px] lg:h-[650px]" : "h-[308px] lg:h-[650px]"
-        }`}
+        className={`flex justify-center items-center  max-w-7xl mx-auto bg-[#a10101] ${showForm ? "h-[650px] lg:h-[650px]" : "h-[308px] lg:h-[650px]"}`}
       >
-        <div className="relative w-full">
+        {/* Outer red background */}
+        <AnimatePresence mode="popLayout">
           {showForm ? (
             <motion.div
               key="form"
-              initial={{ y: "100%", opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: "100%", opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }} // Animate to center
+              className="relative w-full  flex justify-center items-center"
+              exit={{ y: "100%", opacity: 0 }} // Exit to bottom
+              initial={{ y: "100%", opacity: 0 }} // Start from bottom
               transition={{ duration: 0.5, ease: "easeInOut" }}
-              className="relative w-full flex justify-center items-center"
             >
               <FormPage closeForm={() => setShowForm(false)} />
             </motion.div>
           ) : (
             <motion.div
               key="main-content"
-              initial={{ y: "100%", opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: "-100%", opacity: 0 }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
+              animate={{ y: 0, opacity: 1 }} // Animate to center
               className="relative w-full max-w-5xl mt-20 h-[200px] lg:h-[450px] flex justify-center items-center"
+              exit={{ y: "-100%", opacity: 0 }} // Exit to top
+              initial={{ y: "100%", opacity: 0 }} // Start from top
+              transition={{ duration: 0.5, ease: "easeInOut" }} // Smooth easing and slight delay
             >
               {/* Start a Project box */}
               <div className="absolute left-0 -top-16 z-50 w-1/2 mx-auto h-full text-primary bg-white flex flex-col justify-center items-center space-y-2 shadow-lg cursor-pointer">
@@ -74,10 +71,10 @@ const ContactCard = () => {
               <div className="absolute inset-0 border-4 lg:border-8 border-primary translate-x-[120%] md:translate-x-[95%] lg:translate-x-[95%] border-l-0  w-5/12 md:w-[50%] lg:w-1/2 right-0 -translate-y-8" />
             </motion.div>
           )}
-        </div>
-
-        <div className="absolute inset-0 border-8 border-b-0 border-[#a10101] translate-x-0 right-0 translate-y-24 -z-10 hidden lg:flex" />
+        </AnimatePresence>
       </div>
+
+      <div className="absolute inset-0 border-8 border-b-0 border-[#a10101] translate-x-0 right-0 translate-y-24 -z-10 hidden lg:flex" />
     </div>
   );
 };

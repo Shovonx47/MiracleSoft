@@ -83,7 +83,9 @@ const Profile = () => {
           <div key={index} className="relative group overflow-hidden">
             <Image
               alt={`Image ${index + 1}`}
-              className="w-screen min-h-[250px] max-h-[350px] object-cover rounded-none transition-all duration-700 ease-in-out cursor-pointer"
+              className={`w-screen min-h-[250px] max-h-[350px] rounded-none transition-all duration-700 ease-in-out cursor-pointer ${
+                profile.image.includes('1718886102938') ? 'object-cover object-[center_20%]' : 'object-cover'
+              }`}
               src={profile.image}
             />
 
@@ -131,7 +133,7 @@ const Profile = () => {
           </div>
         ))}
       </div>
-    </section>
+    </section>  
   );
 };
 
