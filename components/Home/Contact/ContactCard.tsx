@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, type AnimatePresenceProps } from "framer-motion";
 
 import FormPage from "./FormPage";
 
@@ -15,27 +15,26 @@ const ContactCard = () => {
         className={`flex justify-center items-center  max-w-7xl mx-auto bg-[#a10101] ${showForm ? "h-[650px] lg:h-[650px]" : "h-[308px] lg:h-[650px]"}`}
       >
         {/* Outer red background */}
-        <AnimatePresence>
-          {showForm && (
+        <AnimatePresence initial={false}>
+          {showForm ? (
             <motion.div
               key="form"
-              animate={{ y: 0, opacity: 1 }}
-              className="relative w-full  flex justify-center items-center"
-              exit={{ y: "100%", opacity: 0 }}
               initial={{ y: "100%", opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: "100%", opacity: 0 }}
               transition={{ duration: 0.5, ease: "easeInOut" }}
+              className="relative w-full  flex justify-center items-center"
             >
               <FormPage closeForm={() => setShowForm(false)} />
             </motion.div>
-          )}
-          {!showForm && (
+          ) : (
             <motion.div
               key="main-content"
+              initial={{ y: "100%", opacity: 0 }}
               animate={{ y: 0, opacity: 1 }} // Animate to center
-              className="relative w-full max-w-5xl mt-20 h-[200px] lg:h-[450px] flex justify-center items-center"
               exit={{ y: "-100%", opacity: 0 }} // Exit to top
-              initial={{ y: "100%", opacity: 0 }} // Start from top
               transition={{ duration: 0.5, ease: "easeInOut" }} // Smooth easing and slight delay
+              className="relative w-full max-w-5xl mt-20 h-[200px] lg:h-[450px] flex justify-center items-center"
             >
               {/* Start a Project box */}
               <div className="absolute left-0 -top-16 z-50 w-1/2 mx-auto h-full text-primary bg-white flex flex-col justify-center items-center space-y-2 shadow-lg cursor-pointer">
