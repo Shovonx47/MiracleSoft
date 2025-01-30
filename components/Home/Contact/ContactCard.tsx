@@ -15,7 +15,7 @@ const ContactCard = () => {
         className={`flex justify-center items-center  max-w-7xl mx-auto bg-[#a10101] ${showForm ? "h-[650px] lg:h-[650px]" : "h-[308px] lg:h-[650px]"}`}
       >
         {/* Outer red background */}
-        <AnimatePresence mode="popLayout">
+        <AnimatePresence initial={false} mode="popLayout" onExitComplete={() => {}}>
           {showForm ? (
             <motion.div
               key="form"
