@@ -38,12 +38,18 @@ const CardComponent = ({
           )}
 
           {/* Image and heart icon section */}
-          <div className={`h-full `}>
+          <div className={`h-full ${
+            isEven 
+              ? "mt-[85px] md:mt-[75px] md:ml-[185px] lg:ml-[115px]" 
+              : "mt-[85px] md:mt-[75px] md:ml-[185px] lg:ml-[115px]"
+          }`}>
+            <div className={`${
+              isEven 
+                ? "hidden md:flex border-[9px] md:border-[11px] border-[#a10101] h-16 md:h-52 lg:h-80 relative w-full md:w-9/12 lg:w-full translate-x-[-8px] translate-y-[8px]" 
+                : "hidden md:flex border-[9px] md:border-[11px] border-[#a10101] h-16 md:h-52 lg:h-80 relative w-full md:w-12/12 lg:w-full -translate-y-[40px]"
+            }`} />
             <div
-              className={`${isEven ? "hidden md:flex border-[9px] md:border-[11px] border-[#a10101] h-16 md:h-52 lg:h-80 relative mt-10 w-full md:w-9/12 lg:w-full" : "hidden md:flex border-[9px] md:border-[11px] border-[#a10101] h-16 md:h-52 lg:h-80 relative mt-10 w-full md:w-12/12 lg:w-full"}`}
-            />
-            <div
-              className={`md:-mt-72 lg:-mt-96 ${isEven ? "md:ml-12" : "md:mr-12"} relative`}
+              className={`md:-mt-72 lg:-mt-96 ${isEven ? "md:ml-6" : "md:mr-12"} relative`}
             >
               <Image
                 isZoomed
@@ -62,7 +68,7 @@ const CardComponent = ({
 
           {/* Conditionally render content for even cards */}
           {isEven && (
-            <div className="md:w-7/12 lg:w-5/12 mt-20 md:mt-7 md:-ml-12 lg:ml-0 lg:mt-28 ">
+            <div className="md:w-7/12 lg:w-5/12 mt-10 md:mb-10 md:mt-5 md:-ml-12 lg:ml-0 lg:mt-28 ">
               <h1 className="text-center md:text-left text-2xl md:text-3xl font-bold text-primary">
                 {title}
               </h1>
