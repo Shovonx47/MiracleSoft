@@ -193,13 +193,13 @@ const AppointmentModal: React.FC<AppointmentModalProps> = ({ isOpen, onClose }) 
                     .react-calendar__tile--active:enabled:hover,
                     .react-calendar__tile--active:enabled:focus {
                       border-radius: 50% !important;
-                      background: ##81c45c !important;
+                      background: #81c45c !important;
                       color: white !important;
                     }
                     .dark .react-calendar__tile--active,
                     .dark .react-calendar__tile--active:enabled:hover,
                     .dark .react-calendar__tile--active:enabled:focus {
-                      background: ##81c45c !important;
+                      background: #81c45c !important;
                     }
 
                     /* Hover and focus states */
