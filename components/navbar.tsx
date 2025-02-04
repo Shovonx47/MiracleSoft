@@ -17,17 +17,18 @@ import logo from "../assets/logo/Miracle.png";
 import darkLogo from "../assets/logo/Dark Logo 02.png";
 
 import { ThemeSwitch } from "./theme-switch";
-
+import AppointmentModal from "./AppointmentModal";
 import { siteConfig } from "@/config/site";
 
 type AnimatedUnderlineProps = {
   active?: boolean;
 };
 
-const Navbar: React.FC = () => {
+const Navbar: React.FC<{ onOpenModal: () => void }> = ({ onOpenModal }) => {
   const pathName = usePathname();
 
   const [itemName, setItemName] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
   // const isScrolled = useAppSelector((state) => state.scroll.isScrolled);
 
   useEffect(() => {
@@ -137,7 +138,23 @@ const Navbar: React.FC = () => {
         </div>
       </NavbarMenu>
 
-      <ThemeSwitch />
+      <NavbarContent justify="end">
+        <NavbarItem>
+          <ThemeSwitch />
+        </NavbarItem>
+        <NavbarItem>
+          <button
+            onClick={onOpenModal}
+            className="px-4 py-2 border-2 border-black dark:border-white rounded-md text-black dark:text-white bg-transparent hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-300 cursor-pointer"
+          >
+            Schedule an appointment
+          </button>
+          <AppointmentModal
+            isOpen={isModalOpen}
+            onClose={() => setIsModalOpen(false)}
+          />
+        </NavbarItem>
+      </NavbarContent>
     </NextUINavbar>
   );
 };
