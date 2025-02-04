@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, MouseEvent } from 'react';
 import Image from 'next/image';
 import { FaClock, FaGlobeAsia, FaArrowLeft } from 'react-icons/fa';
 import logo from "../assets/logo/Miracle.png";
@@ -46,8 +46,10 @@ const AppointmentModal: React.FC<AppointmentModalProps> = ({ isOpen, onClose }) 
 
   if (!isOpen) return null;
 
-  const handleDateChange = (date: Date) => {
-    setSelectedDate(date);
+  const handleDateChange = (value: Date | Date[] | null, event?: MouseEvent<HTMLButtonElement>) => {
+    if (value instanceof Date) {
+      setSelectedDate(value);
+    }
   };
 
   const formatSelectedDate = (date: Date) => {
@@ -136,16 +138,16 @@ const AppointmentModal: React.FC<AppointmentModalProps> = ({ isOpen, onClose }) 
                   
                   <Calendar
                     className="dark:text-white"
-                    tileClassName={({ date, view }) => 
-                      `${date.getDay() === 5 || date < new Date().setHours(0, 0, 0, 0) ? 'opacity-50' : ''}
+                    tileClassName={({ date }) => 
+                      `${date.getDay() === 5 || date.getTime() < new Date().setHours(0, 0, 0, 0) ? 'opacity-50' : ''}
                       hover:!rounded-full active:!rounded-full focus:!rounded-full`
                     }
                     view="month"
                     minDate={new Date()}
                     tileDisabled={({ date }) => {
-                      return date.getDay() === 5 || date < new Date().setHours(0, 0, 0, 0);
+                      return date.getDay() === 5 || date.getTime() < new Date().setHours(0, 0, 0, 0);
                     }}
-                    onChange={handleDateChange}
+                    onChange={handleDateChange as any}
                     value={selectedDate}
                   />
                   <style jsx global>{`
@@ -191,13 +193,13 @@ const AppointmentModal: React.FC<AppointmentModalProps> = ({ isOpen, onClose }) 
                     .react-calendar__tile--active:enabled:hover,
                     .react-calendar__tile--active:enabled:focus {
                       border-radius: 50% !important;
-                      background: #006edc !important;
+                      background: ##81c45c !important;
                       color: white !important;
                     }
                     .dark .react-calendar__tile--active,
                     .dark .react-calendar__tile--active:enabled:hover,
                     .dark .react-calendar__tile--active:enabled:focus {
-                      background: #3b82f6 !important;
+                      background: ##81c45c !important;
                     }
 
                     /* Hover and focus states */
@@ -277,13 +279,13 @@ const AppointmentModal: React.FC<AppointmentModalProps> = ({ isOpen, onClose }) 
                           {selectedTimeSlot === time ? (
                             <div className="flex space-x-2">
                               <button
-                                className="flex-grow text-left px-4 py-3 bg-blue-100 dark:bg-blue-900/50 rounded-lg border-2 border-blue-500 dark:border-blue-400 text-blue-800 dark:text-blue-100 font-medium"
+                                className="flex-grow text-left px-4 py-3 bg-[#81c45c]/20 dark:bg-[#81c45c]/50 rounded-lg border-2 border-[#81c45c] dark:border-[#81c45c]/80 text-[#81c45c] dark:text-[#81c45c]/90 font-medium"
                               >
                                 {time}
                               </button>
                               <button
                                 onClick={handleNextClick}
-                                className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200 shadow-sm hover:shadow-md"
+                                className="px-6 py-3 bg-[#81c45c] hover:bg-[#81c45c]/90 text-white font-medium rounded-lg transition-colors duration-200 shadow-sm hover:shadow-md"
                               >
                                 Next
                               </button>
@@ -326,7 +328,7 @@ const AppointmentModal: React.FC<AppointmentModalProps> = ({ isOpen, onClose }) 
                       name="name"
                       value={formData.name}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-[#81c45c] focus:border-transparent"
                       placeholder="Enter your name"
                     />
                   </div>
@@ -340,7 +342,7 @@ const AppointmentModal: React.FC<AppointmentModalProps> = ({ isOpen, onClose }) 
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-[#81c45c] focus:border-transparent"
                       placeholder="Enter your email"
                     />
                   </div>
@@ -354,14 +356,14 @@ const AppointmentModal: React.FC<AppointmentModalProps> = ({ isOpen, onClose }) 
                       value={formData.notes}
                       onChange={handleInputChange}
                       rows={4}
-                      className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
+                      className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-[#81c45c] focus:border-transparent resize-none"
                       placeholder="Share any additional information..."
                     />
                   </div>
 
                   <button
                     onClick={handleSchedule}
-                    className="w-full px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200 shadow-sm hover:shadow-md"
+                    className="w-full px-6 py-3 bg-[#81c45c] hover:bg-[#81c45c]/90 text-white font-medium rounded-lg transition-colors duration-200 shadow-sm hover:shadow-md"
                   >
                     Schedule Meeting
                   </button>
