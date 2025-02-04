@@ -84,7 +84,7 @@ const AppointmentModal: React.FC<AppointmentModalProps> = ({ isOpen, onClose }) 
         icon: 'success',
         title: 'Meeting Scheduled!',
         text: `Your meeting has been fixed on ${formattedDate} at ${selectedTimeSlot}.`,
-        confirmButtonColor: '#3b82f6'
+        confirmButtonColor: '#81c45c'
       }).then(() => {
         onClose();
       });
