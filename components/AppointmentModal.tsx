@@ -253,16 +253,14 @@ const AppointmentModal: React.FC<AppointmentModalProps> = ({ isOpen, onClose }) 
                     <select
                       value={selectedTimezone}
                       onChange={(e) => setSelectedTimezone(e.target.value)}
-                      className="block w-full px-3 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm text-gray-700 dark:text-gray-200"
+                      className="block w-full px-3 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-[#81c45c] focus:border-[#81c45c] text-sm text-gray-700 dark:text-gray-200"
                     >
                       <option value="Asia/Dhaka">Bangladesh (GMT+6)</option>
-                      {Intl.supportedValuesOf('timeZone')
-                        .filter(tz => tz !== 'Asia/Dhaka')
-                        .map((timezone) => (
-                          <option key={timezone} value={timezone}>
-                            {timezone.replace(/_/g, ' ')}
-                          </option>
-                        ))}
+                      <option value="America/New_York">New York (GMT-4)</option>
+                      <option value="Europe/London">London (GMT+1)</option>
+                      <option value="Asia/Dubai">Dubai (GMT+4)</option>
+                      <option value="Asia/Singapore">Singapore (GMT+8)</option>
+                      <option value="Australia/Sydney">Sydney (GMT+10)</option>
                     </select>
                   </div>
                 </div>
